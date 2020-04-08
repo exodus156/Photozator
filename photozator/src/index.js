@@ -9,6 +9,10 @@ import * as serviceWorker from './serviceWorker';
 
 const store = createStore(rootReducer, applyMiddleware(thunk)); //Create redux store
 
+store.subscribe(() => {
+  console.log(store.getState());
+})
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}><App /></Provider>

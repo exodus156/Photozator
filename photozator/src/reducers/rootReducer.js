@@ -7,25 +7,31 @@ const initState = {
     RAPIDAPI_Key: REACT_APP_RAPID_API_KEY,
     YANDEX_Key: REACT_APP_YANDEX_API_KEY,
     ImageText: "",
-    TranslatedText: ""
+    TranslatedText: "",
+    Image: "asdads"
 }
 
 function rootReducer(state = initState, action){
     if(action.type === 'UPDATE_IMAGETEXT'){
         return{
             ...state,
-            ImageText: action.ImageText
+            ImageText: action.imageText
         }
     } else if(action.type === 'UPDATE_TRANSLATEDTEXT'){
         return{
             ...state,
-            TranslatedText: action.TranslatedText
+            TranslatedText: action.translatedText
         }
     } else if(action.type === 'RESET_TEXT_FIELDS'){
         return{
             ...state,
             ImageText: "",
             TranslatedText: ""
+        }
+    } else if(action.type === 'UPDATE_IMAGE'){
+        return{
+            ...state,
+            Image: action.image
         }
     } else{
         return state;

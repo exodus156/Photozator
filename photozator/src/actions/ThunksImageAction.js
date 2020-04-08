@@ -4,8 +4,7 @@ const getImageText = (key, image) =>{
     myHeaders.append("apikey", key);
     
     var formdata = new FormData();
-    formdata.append("filetype", image);
-    formdata.append("scale", "true");
+    formdata.append("base64Image", image);
     
     var requestOptions = {
       method: 'POST',
