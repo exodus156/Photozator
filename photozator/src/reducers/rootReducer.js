@@ -8,7 +8,8 @@ const initState = {
     YANDEX_Key: REACT_APP_YANDEX_API_KEY,
     ImageText: "",
     TranslatedText: "",
-    Image: "asdads"
+    Image: "",
+    Language: ""
 }
 
 function rootReducer(state = initState, action){
@@ -31,7 +32,8 @@ function rootReducer(state = initState, action){
     } else if(action.type === 'UPDATE_IMAGE'){
         return{
             ...state,
-            Image: action.image
+            Image: action.image,
+            Language: action.language
         }
     } else{
         return state;

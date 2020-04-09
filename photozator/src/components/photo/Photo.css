@@ -24,3 +24,17 @@
     width: 160px !important;
     margin-bottom: 20px;
 }
+
+
+.dropdown-content li>a, .dropdown-content li>span{
+   color: #e91e63 !important;
+}
+
+.select-wrapper input.select-dropdown {
+   border-bottom: 1px solid #e91e63 !important;
+   color: #e91e63 !important;
+}
+
+.select-wrapper .caret {
+   fill: #e91e63 !important;
+}

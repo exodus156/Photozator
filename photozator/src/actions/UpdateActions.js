@@ -12,9 +12,10 @@ export const updateTranslatedText = (translatedText) => {
     };
 };
 
-export const updateImage = (image) => {
+export const updateImage = (image, language) => {
     return{
         type: 'UPDATE_IMAGE',
-        image
+        image,
+        language
     };
 };

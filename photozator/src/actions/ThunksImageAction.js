@@ -1,10 +1,11 @@
-const getImageText = (key, image) =>{
+const getImageText = (key, image, language) =>{
 
     var myHeaders = new Headers();
     myHeaders.append("apikey", key);
     
     var formdata = new FormData();
     formdata.append("base64Image", image);
+    formdata.append("language", language);
     
     var requestOptions = {
       method: 'POST',
