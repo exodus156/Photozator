@@ -27,11 +27,13 @@ class Photo extends Component {
 
             reader.readAsDataURL(this.image.files[0]);
             
-            
             setTimeout(()=>{
                 getImageText(this.props.Key, this.props.Image, this.props.Language)
-                    .then(response => response.text())
-                    .then(result => console.log(result))
+                    .then(response => response.json())
+                    .then(result => {
+                        let text = result.ParsedResults[0].ParsedText;
+                        this.props.updateImageText(text);
+                    })
                     .catch(error => console.log('error', error));
             }, 500);
         }
@@ -93,7 +95,6 @@ class Photo extends Component {
 const mapStateToProps = (state) =>{
     return{
         Key: state.OCR_Key,
-        Text: state.ImageText,
         Image: state.Image,
         Language: state.Language
     }
