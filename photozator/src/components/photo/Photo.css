@@ -38,3 +38,11 @@
 .select-wrapper .caret {
    fill: #e91e63 !important;
 }
+
+.spinner-layer{
+   border-color: #e91e63 !important;
+}
+
+.modal-text{
+   padding-bottom: 20px;
+}

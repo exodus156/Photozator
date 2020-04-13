@@ -9,8 +9,11 @@ class Photo extends Component {
     componentDidMount() {
         /* Initialize materialize element */
         document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('select');
-            var instances = M.FormSelect.init(elems);
+            var FormElems = document.querySelectorAll('select');
+            var FormInstances = M.FormSelect.init(FormElems);
+
+            var ModalElems = document.querySelectorAll('.modal');
+            var ModalInstances = M.Modal.init(ModalElems, {dismissible: false});
           });
     }
     render(){
@@ -18,6 +21,9 @@ class Photo extends Component {
             e.preventDefault();
 
             const lang = this.language.value;
+
+            const modal = M.Modal.getInstance(this.modal);
+            modal.open();
 
             let reader = new FileReader();
             reader.onload = () =>{
@@ -33,6 +39,7 @@ class Photo extends Component {
                     .then(result => {
                         let text = result.ParsedResults[0].ParsedText;
                         this.props.updateImageText(text);
+                        modal.close();
                     })
                     .catch(error => console.log('error', error));
             }, 500);
@@ -84,6 +91,23 @@ class Photo extends Component {
                     <button className="btn waves-effect waves-light col s3 m4 l2 offset-s4 offset-m5 offset-l5 pink teal-text text-lighten-4" type="submit" id="submitImageButton">Submit image
                       <i className="material-icons right">send</i>
                     </button>
+                </div>
+
+                <div className="modal" ref={modal => this.modal = modal}>
+                    <div className="modal-content center-align teal lighten-4">
+                        <h4 className="pink-text modal-text">Retrieving image text...</h4>
+                        <div className="preloader-wrapper active">
+                          <div className="spinner-layer">
+                            <div className="circle-clipper left">
+                              <div className="circle"></div>
+                            </div><div className="gap-patch">
+                              <div className="circle"></div>
+                            </div><div className="circle-clipper right">
+                              <div className="circle"></div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
                 </div>
             </form>
         )
