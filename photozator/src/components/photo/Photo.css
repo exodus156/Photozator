@@ -2,22 +2,22 @@
     color:    #909;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color:    #e91e63;
+   color:    #c2185b;
    opacity:  1;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color:    #e91e63;
+   color:    #c2185b;
    opacity:  1;
 }
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color:    #e91e63;
+   color:    #c2185b;
 }
 ::-ms-input-placeholder { /* Microsoft Edge */
-   color:    #e91e63;
+   color:    #c2185b;
 }
 
 ::placeholder { /* Most modern browsers support this now. */
-   color:    #e91e63;
+   color:    #c2185b;
 }
 
 #submitImageButton {
@@ -27,20 +27,20 @@
 
 
 .dropdown-content li>a, .dropdown-content li>span{
-   color: #e91e63 !important;
+   color: #c2185b !important;
 }
 
 .select-wrapper input.select-dropdown {
-   border-bottom: 1px solid #e91e63 !important;
-   color: #e91e63 !important;
+   border-bottom: 1px solid #c2185b !important;
+   color: #c2185b !important;
 }
 
 .select-wrapper .caret {
-   fill: #e91e63 !important;
+   fill: #c2185b !important;
 }
 
 .spinner-layer{
-   border-color: #e91e63 !important;
+   border-color: #c2185b !important;
 }
 
 .modal-text{

@@ -49,12 +49,12 @@ class Photo extends Component {
             <form onSubmit={submitImage}>
                 <div className="row">
                     <div className="file-field input-field col s10 l4 offset-s1 offset-l1">
-                        <div className="btn pink teal-text text-lighten-4">
+                        <div className="btn pink darken-2 teal-text text-lighten-4">
                             <span>Image</span>
                             <input type="file" id="imageInput" accept="image/*" required ref={input => this.image = input}/>
                         </div>
                         <div className="file-path-wrapper center-align">
-                            <input className="file-path pink-text validate" type="text" placeholder="Upload image for text extraction." />
+                            <input className="file-path pink-text text-darken-2 validate" type="text" placeholder="Upload image for text extraction." />
                         </div>
                     </div> 
                     <div className="input-field col s6 l4 offset-s3 offset-l2">
@@ -84,18 +84,18 @@ class Photo extends Component {
                         <option value="swe">Swedish</option>
                         <option value="tur">Turkish</option>
                       </select>
-                      <label className="pink-text"><b>Select image language</b></label>
+                      <label className="pink-text text-darken-2"><b>Select image language</b></label>
                     </div>                   
                 </div>
                 <div className="row">
-                    <button className="btn waves-effect waves-light col s3 m4 l2 offset-s4 offset-m5 offset-l5 pink teal-text text-lighten-4" type="submit" id="submitImageButton">Submit image
+                    <button className="btn waves-effect waves-light col s3 m4 l2 offset-s4 offset-m5 offset-l5 pink darken-2 teal-text text-lighten-4" type="submit" id="submitImageButton">Submit image
                       <i className="material-icons right">send</i>
                     </button>
                 </div>
 
                 <div className="modal" ref={modal => this.modal = modal}>
                     <div className="modal-content center-align teal lighten-4">
-                        <h4 className="pink-text modal-text">Retrieving image text...</h4>
+                        <h4 className="pink-text text-darken-2 modal-text">Retrieving image text...</h4>
                         <div className="preloader-wrapper active">
                           <div className="spinner-layer">
                             <div className="circle-clipper left">
