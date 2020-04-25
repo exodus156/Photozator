@@ -6,11 +6,16 @@ import rootReducer from './reducers/rootReducer';
 import thunk from 'redux-thunk';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import M from 'materialize-css';
 
 const store = createStore(rootReducer, applyMiddleware(thunk)); //Create redux store
 
 store.subscribe(() => {
   console.log(store.getState());
+  setInterval(() => {
+    M.textareaAutoResize(document.getElementById("ImageText"));
+    M.textareaAutoResize(document.getElementById("TranslatedText"));
+  }, 500)
 })
 
 ReactDOM.render(

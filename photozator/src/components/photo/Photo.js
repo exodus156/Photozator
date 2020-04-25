@@ -22,7 +22,7 @@ class Photo extends Component {
 
             const lang = this.language.value;
 
-            const modal = M.Modal.getInstance(this.modal);
+            const modal = M.Modal.getInstance(this.ImageModal);
             modal.open();
 
             let reader = new FileReader();
@@ -31,14 +31,15 @@ class Photo extends Component {
                 this.props.updateImage(dataURL, lang);
             };
 
-            reader.readAsDataURL(this.image.files[0]);
+            reader.readAsDataURL(this.image.files[0]);            
             
             setTimeout(()=>{
                 getImageText(this.props.Key, this.props.Image, this.props.Language)
                     .then(response => response.json())
                     .then(result => {
                         let text = result.ParsedResults[0].ParsedText;
-                        this.props.updateImageText(text);
+                        const fixedText = text.replace(/\r\n/g, " ")
+                        this.props.updateImageText(fixedText);                                              
                         modal.close();
                     })
                     .catch(error => console.log('error', error));
@@ -93,7 +94,7 @@ class Photo extends Component {
                     </button>
                 </div>
 
-                <div className="modal" ref={modal => this.modal = modal}>
+                <div className="modal" ref={modal => this.ImageModal = modal}>
                     <div className="modal-content center-align teal lighten-4">
                         <h4 className="pink-text text-darken-2 modal-text">Retrieving image text...</h4>
                         <div className="preloader-wrapper active">
