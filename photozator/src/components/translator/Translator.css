@@ -2,7 +2,7 @@
     color: #c2185b !important;
     border-color: transparent !important;
     border-bottom-style: solid !important;
-    max-height: 200px !important;
+    height: 100px !important;
     overflow-y: scroll;
 }
 
