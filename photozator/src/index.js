@@ -11,7 +11,6 @@ import M from 'materialize-css';
 const store = createStore(rootReducer, applyMiddleware(thunk)); //Create redux store
 
 store.subscribe(() => {
-  console.log(store.getState());
   setInterval(() => {
     M.textareaAutoResize(document.getElementById("ImageText"));
     M.textareaAutoResize(document.getElementById("TranslatedText"));
